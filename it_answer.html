@@ -139,20 +139,111 @@
     <div class="section padding_layout_3">
         <div class="container">
             <div class="ui raised segment">
-                <span>
-                    <b>Answer 1.</b> 在三角形 $ABC$ 中，點 $A_1$ 在邊 $BC$ 上，而點 $B_1$ 在邊 $AC$ 上。點 $P$, $Q$ 分別在線段
-                    $AA_1$ 及 $BB_1$ 上，滿足 $PQ$ 平行於 $AB$。在直線 $PB_1$ 上取點 $P_1$ 使得 $B_1$ 嚴格介於 $P$, $P_1$ 之間，
-                    且滿足 $\angle PP_1C = \angle BAC$；又在直線 $QA_1$ 上取點 $Q_1$ 使得 $A_1$ 嚴格介於 $Q$, $Q_1$ 之間，且滿足
-                    $\angle CQ_1Q = \angle CBA$。
-                    試證：$P$, $Q$, $P_1$, $Q_1$ 共圓。(IMO 2019 Problem 2)
-                </span>
+                <b>Answer 1.</b> <br>
+                <div style="text-align:center">
+                    <img src="images/geo_image/P1.png" style="width:90%">
+                </div>
+                <p>延長 $B_1P$、$AB$ 交於 $P_2$ 點，延長 $A_1Q$、$BA$ 交於 $Q_2$ 點。延長 $AA_1$、$BB_1$，分別交 $\triangle ABC$ 的外接圓於 $A_2$、$B_2$ 兩點。</p>
+
+                <p>
+                    易知 $A$、$P_1$、$C$、$P_2$ 和 $C$、$Q_1$、$B$、$Q_2$ 分別四點共圓。<br>
+                    下面只需進行 Angle Chasing 便可﹕
+                </p>
+                <p>
+                    $$ \angle CA_2A_1  = \angle CA_2A  = \angle CBA  = \angle CQ_1Q  = \angle CQ_1A_1 $$
+                </p>
+                <p>
+                    所以有 $C$、$A_2$、$Q_1$、$A_1$ 四點共圓。<br>
+                    同理可得 $C$、$B_2$、$P_1$、$B_1$ 四點共圓。
+                </p>
+                <p>由此可推出</p>
+                <p>
+                    $$ \angle A_2Q_1Q = \angle A_2Q_1A_1 = 180^{\circ} - \angle A_2CA_1 = 180^{\circ} - \angle A_2CB = 180^{\circ} - \angle A_2AB = \angle A_2AQ_2 = \angle A_2PQ$$
+                </p>
+                <p>
+                    所以有 $A_2$、$Q_1$、$P$、$Q$ 四點共圓。<br>
+                    同理可得 $B_2$、$P_1$、$P$、$Q$ 四點共圓。
+                </p>
+                <p>與此同時</p>
+                <p>
+                    $$ \angle A_2PQ = 180^{\circ} - \angle A_2AB = 180^{\circ} - \angle A_2B_2B = 180^{\circ} - \angle A_2B_2Q $$
+                </p>
+                <p>
+                    所以有 $A_2$、$P$、$Q$、$B_2$ 四點共圓。<br>
+                    由三點定圓知，$A_2$、$Q_1$、$P$、$Q$、$P_1$、$B_2$ 六點共圓。<br>
+                    由此可得 $P$、$Q$、$P_1$、$Q_1$ 四點共圓。
+                </p>
             </div>
             <div class="ui raised segment">
-                <span>
-                    <b>Answer 2.</b> 令 $\Gamma$ 為銳角三角形 $ABC$ 的外接圓。點 $D$ 和 $E$ 分別在線段 $AB$ 和 $AC$ 上，使得
-                    $AD = AE$。$BD$ 和 $CE$ 的中垂線分別和 $Γ$ 的劣弧 $AB$ 和 $AC$ 相交於點 $F$ 和 $G$。證明直線 $DE$ 與
-                    $FG$ 平行(或是同一條線)。(IMO 2018 Problem 1)
-                </span>
+                <b>Answer 2.</b><br>
+                <div style="margin-top:20px">
+                    <b>Solution 1.</b>
+                    <div style="text-align:center">
+                        <img src="images/geo_image/P2_1.png" style="width:90%">
+                    </div>
+                    <p>設 $M$ 點是 $BD$ 和 $CE$ 的兩條中垂線交點，$O$ 點是 $\triangle ABC$ 的圓心。<br>
+                    設 $FG$ 分別交 $AB$、$AC$ 於 $H$、$I$。<br>
+                    設 $FM$ 交 $AB$ 於點 $M_1$，$OO_1 \perp AB$ 於 $O_1$，$O_J$ 垂直 $FM$ 於 $J$，$OK \perp GM$ 於 $K$。</p>
+                
+                    <p>顯然 $OJM_1O_1$ 是矩形，所以有﹕</p>
+                    <p>
+                        $$ OJ = M_1O_1 = O_1B - M_1B = \frac{1}{2}AB - \frac{1}{2}DB = \frac{1}{2}AD $$
+                    </p>
+                    <p>同理可得 $OK = \frac{1}{2}AE$。由 $AD = AE$ 知，有 $OJ = OK$，即 $MO$ 平分 $\angle FMG$。<br>
+                    結合半徑相等 $OF = OG$ 這個條件，利用 $H.L.$ 全等判定法可知﹕</p>
+                    <p>
+                        $$ \triangle OJF \cong \triangle OKG\ \text{且}\ \triangle OJM \cong \triangle OKM $$
+                    </p>
+                    <p>由此可推得 $MF = MJ + JF = KM + KG = MG \Rightarrow \angle MFG = \angle MGF$</p>
+                    <p>
+                        因為 $\angle AHI$ 是 $\angle MFG$ 的餘角，$\angle AIH$ 是 $\angle MGF$ 的餘角，所以有 $\angle AHI = \angle AHI \Rightarrow AH = AI$。<br>
+                        由此可得 $\angle AHI = 90^{\circ} - \angle BAC = \angle ADE \Leftrightarrow HI$、$DE$ 平行或重合 $\Leftrightarrow FG$、$DE$ 平行或重合。
+                    </p>
+                </div>
+                <div style="margin-top:20px">
+                    <b>Solution 2.</b>
+                    <div style="text-align:center">
+                        <img src="images/geo_image/P2_2.png" style="width:90%">
+                    </div>
+                    <p>
+                        設 $FG$ 分別交 $AB$、$AC$ 於 $H$、$I$。<br>
+                        我們先將要證的命題進行等價變換﹕
+                    </p>
+                    <p>
+                        $$
+                        \begin{align*}
+                        &DE、FG\ \text{平行或重合}\\
+                        \Leftrightarrow\ & DE、HI\ \text{平行或重合} \\
+                        \Leftrightarrow\ & \frac{AD}{AH} = \frac{AE}{AI} \\
+                        \Leftrightarrow\ & AH = AI\\
+                        \Leftrightarrow\ & \angle AHI = \angle AIH\\
+                        \Leftrightarrow\ & \widehat{FB} + \widehat{GA} = \widehat{AF} + \widehat{CG}\\
+                        \Leftrightarrow\ & \widehat{GA} - \widehat{CG} = \widehat{AF} - \widehat{FB}\\
+                        \Leftrightarrow\ & \angle GCA - \angle CAG = \angle ABF - \angle FAB\\
+                        \Leftrightarrow\ & \angle CEG - \angle CAG = \angle FDB - \angle FAB\\
+                        \Leftrightarrow\ & \angle AGE = \angle DFA
+                        \end{align*}
+                        $$
+                    </p>
+                    <p>
+                        顯然 $\triangle CEG$ 和 $\triangle FDB$ 都是等腰三角形，所以 $\angle CEG,\ \angle FDB < 90^{\circ}。$<br>
+                        此時有 $\angle AGE < \angle CEG < 90^{\circ}$ 和 $\angle DFA < \angle FDB < 90^{\circ}$。<br>
+                        所以有
+                    </p>
+                    <p>
+                        $$
+                        \begin{align*}
+                        & \angle AGE = \angle DFA\\
+                        \Leftrightarrow\ & \sin \angle AGE = \sin \angle DFA \\
+                        \Leftrightarrow\ & \frac{AE}{\sin \angle AGE} = \frac{AD}{\sin \angle DFA} \\
+                        \Leftrightarrow\ & \frac{EG}{\sin \angle EAG} = \frac{FD}{\sin \angle FAD} \\
+                        \Leftrightarrow\ & \frac{CG}{\sin \angle CAG} = \frac{FB}{\sin \angle FAC} \\
+                        \Leftrightarrow\ & (\text{$\triangle ABC$ 的外接圓直徑}) = (\text{$\triangle ABC$ 的外接圓直徑})
+                        \end{align*}
+                        $$
+                        證畢。
+                    </p> 
+                </div>
             </div>
             <div class="ui raised segment">
                 <span>
